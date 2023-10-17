@@ -1,11 +1,11 @@
-
-
+import { Layout } from "../../Layout/Index";
+import { MinimizedProduct } from "../../MinimizedProduct";
 function Home() {
-    return (
-      <>
-        Reenderizando HOME    
-      </>
-    )
-  }
-  
-  export { Home };
+	return (
+		<Layout>
+			<MinimizedProduct />
+		</Layout>
+	);
+}
+
+export { Home };

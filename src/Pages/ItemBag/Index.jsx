@@ -1,7 +1,5 @@
-
-function ItemBag () {
-return ("Reenderziando ItemBag")
+function ItemBag() {
+	return "Reenderziando ItemBag";
 }
 
 export { ItemBag };
-

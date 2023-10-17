@@ -1,10 +1,5 @@
 function MyOrders() {
-    return (
-      <>
-        Reenderizando MyOrders    
-      </>
-    )
-  }
-  
-  export { MyOrders };
+	return <>Reenderizando MyOrders</>;
+}
 
+export { MyOrders };

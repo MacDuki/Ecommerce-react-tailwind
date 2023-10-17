@@ -1,10 +1,5 @@
-
 function MyAccount() {
-    return (
-      <>
-        Reenderizando MyAccount    
-      </>
-    )
-  }
-  
-  export { MyAccount };
+	return <>Reenderizando MyAccount</>;
+}
+
+export { MyAccount };
