@@ -1,16 +1,22 @@
 import { AiOutlinePlus } from "react-icons/ai";
-function MinimizedProduct() {
+function MinimizedProduct(product) {
+	console.log(product);
 	return (
-		<div className='w-40'>
-			<figure className='relative mb-2 w-full h-4/5'>
-				<AiOutlinePlus className='absolute top-0 right-0 flex item-center w-6 h-6 bg-white rounded-full justify-center' />
-				<img
-					className='Product-img'
-					src='https://f.fcdn.app/imgs/db8b34/artcomputer.com.uy/artcuy/fd89/original/catalogo/194253324034_194253324034_1/2000-2000/auriculares-inalambrico-airpods-gen-3-lightning-auriculares-inalambrico-airpods-gen-3-lightning.jpg'></img>
-			</figure>
-			<div>
-				<h2 className=' name'> Nombre del producto</h2>
-				<h3 className='price'> Precio del producto</h3>
+		<div className=' relative flex justify-center items-center h-auto px-1 '>
+			<div className='flex-col align-center justify-center bg-white w-64 h-64 rounded-lg'>
+				<figure className='mb-1 flex align-center justify-center h-54 w-54'>
+					<AiOutlinePlus className='absolute top-3 right-3 w-6 h-6 bg-white rounded-full' />
+					<h4 className='px-1 absolute top-3 left-3 w-auto h-auto rounded-lg bg-stone-200 text-center'>
+						{product?.product.category}
+					</h4>
+					<img
+						className='Product-img pt-10 h-52 max-w-52'
+						src={product?.product.image}></img>
+				</figure>
+				<div className='flex gap-12 mr-1 ml-1 pr-4 mt-3 rounded-lg bg-stone-200 '>
+					<h2 className='name truncate'> {product?.product.title}</h2>
+					<h3 className='price'> {product?.product.price}$</h3>
+				</div>
 			</div>
 		</div>
 	);
