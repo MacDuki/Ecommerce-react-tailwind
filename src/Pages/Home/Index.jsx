@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../../Layout/Index";
+import { MaximizedProduct } from "../../MaximizedProduct/Index";
 import { MinimizedProduct } from "../../MinimizedProduct";
+
 function Home() {
 	const [products, setProducts] = useState(null);
 
@@ -16,6 +18,7 @@ function Home() {
 				{products?.map((product) => (
 					<MinimizedProduct key={product.id} product={product} />
 				))}
+				<MaximizedProduct />
 			</div>
 		</Layout>
 	);

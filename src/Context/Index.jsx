@@ -10,8 +10,19 @@ function ShopContextProvider({ children }) {
 		setCartNumber(newCartNumber);
 	}
 
+	const [showMaximized, setShowMaximized] = useState(false);
+	function showMaximizedProduct() {
+		setShowMaximized(!showMaximized);
+	}
+
 	return (
-		<shopContext.Provider value={{ plusCartOne, cartNumber }}>
+		<shopContext.Provider
+			value={{
+				plusCartOne,
+				cartNumber,
+				showMaximizedProduct,
+				showMaximized,
+			}}>
 			{children}
 		</shopContext.Provider>
 	);
