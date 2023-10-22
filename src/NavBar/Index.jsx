@@ -1,15 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BsBag, BsListCheck, BsShop } from "react-icons/bs";
 import { VscAccount } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
+import { shopContext } from "../Context/Index";
 
 function NavBar() {
 	const activeStyle = "underline";
 	const [width, setWidth] = useState(window.innerWidth);
 	const showToggleNav = width <= 768;
+	const { cartNumber } = React.useContext(shopContext);
 
 	return (
-		<nav className='bg-neutral-400 sticky flex flex-row justify-between items-center h-11 w-full '>
+		<nav className='bg-neutral-400 top-0 z-10 fixed flex flex-row justify-between items-center h-11 w-full'>
 			<ul className='flex flex-row items-center  md:  space-x-4 ml-5'>
 				<li>
 					<NavLink to='/'>{BsShop}</NavLink>
@@ -38,7 +40,7 @@ function NavBar() {
 					</>
 				)}
 			</ul>
-			<ul className='flex justify-around  items-center	md: space-x-4 mr-5'>
+			<ul className='flex justify-around  items-center 	md: space-x-4 mr-5'>
 				<li>
 					<NavLink to='/MyAccount'>{VscAccount}</NavLink>
 				</li>
@@ -49,6 +51,9 @@ function NavBar() {
 					<NavLink to='/ItemBag'>{BsBag}</NavLink>
 				</li>
 			</ul>
+			<div className='absolute top-1 right-2 bg-neutral-200 rounded-full h-4 w-4 flex justify-center items-center font-light'>
+				{cartNumber}
+			</div>
 		</nav>
 	);
 }

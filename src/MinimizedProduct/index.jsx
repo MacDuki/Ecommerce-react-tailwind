@@ -1,11 +1,17 @@
+import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
+import { shopContext } from "../Context/Index";
+
 function MinimizedProduct(product) {
-	console.log(product);
+	const { plusCartOne } = React.useContext(shopContext);
 	return (
 		<div className=' relative flex justify-center items-center h-auto px-1 '>
 			<div className='flex-col align-center justify-center bg-white w-64 h-64 rounded-lg'>
 				<figure className='mb-1 flex align-center justify-center h-54 w-54'>
-					<AiOutlinePlus className='absolute top-3 right-3 w-6 h-6 bg-white rounded-full' />
+					<AiOutlinePlus
+						onClick={plusCartOne}
+						className='absolute top-3 right-3 w-6 h-6 bg-white rounded-full cursor-pointer'
+					/>
 					<h4 className='px-1 absolute top-3 left-3 w-auto h-auto rounded-lg bg-stone-200 text-center'>
 						{product?.product.category}
 					</h4>
