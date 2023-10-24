@@ -1,24 +1,25 @@
 import React from "react";
-import { AiOutlineClose } from "react-icons/ai";
 import { shopContext } from "../../Context/Index";
-import { MinimizedProduct } from "../../MinimizedProduct";
+import { MinimizedProductBag } from "../../MinimizedProductBag";
 import "./ItemBag.css";
 
 function ItemBag() {
-	const { showMaximized, setShowMiximized, cartProducts, SetCartProducts } =
-		React.useContext(shopContext);
+	const { cartProducts } = React.useContext(shopContext);
 
-	return !showMaximized ? (
+	let realCartProducts;
+	if (cartProducts.length > 0) {
+		realCartProducts = cartProducts.slice();
+		realCartProducts.shift();
+	}
+
+	return (
 		<>
-			<section className='ItemBag-section w-screen flex flex-col fixed right-0 border items-center border-black rounded-lg bg-white sm:w-1/3'>
-				{cartProducts?.map((product) => (
-					<MinimizedProduct key={product.id} product={product} />
+			<section className='ItemBag-section pt-10 w-screen flex flex-col fixed right-0 border items-center border-black rounded-lg bg-white overflow-y-scroll sm:w-1/3'>
+				{realCartProducts.map((product) => (
+					<MinimizedProductBag key={product.id} product={product} />
 				))}
-				<AiOutlineClose />
 			</section>
 		</>
-	) : (
-		setShowMiximized(!showMaximized)
 	);
 }
 
