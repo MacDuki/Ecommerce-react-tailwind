@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+	.maximized-product {
+		height: 100vh;
+	}
+}
+
+@media (max-width: 768px) {
+	.maximized-product {
+		height: 100vh;
+	}
+}

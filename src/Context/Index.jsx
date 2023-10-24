@@ -36,6 +36,7 @@ function ShopContextProvider({ children }) {
 				setProductInfo,
 				cartProducts,
 				setCartProducts,
+				setShowMaximized,
 			}}>
 			{children}
 		</shopContext.Provider>
